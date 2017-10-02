@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <span>
+            <h1 class="panel-title pull-left" style="font-size:30px;">Что нового, <%=user.username%>?</h1>
+        </span>
+    </div>
+
+    <hr>
+    <div class="panel-body">
+        <form role="form" action="/post" method="post">
+        <div class="media-body">
+            <input type="text" class="form-control" name="ttext" placeholder="Заголовок">
+            <textarea name = "ptext" class="form-control" rows="3" placeholder="Текст"></textarea>
+        </div>
+        <div class="pull-right btn-group">
+            <input type="submit" class="btn btn-success pull-right" value="Опубликовать">
+        </div>
+        </form>
+    </div>
+</div>

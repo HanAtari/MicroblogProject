@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title><%=blocks.title%></title>
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link href="http://cdn.quilljs.com/1.3.0/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <%-blocks.header%>
+</header>
+
+<div class="mainbody container-fluid">
+    <div class="row">
+        <%-partial('../partials/NavBar')%>
+        <div style="padding-top:50px;"> </div>
+
+        <%-body -%>
+    </div>
+</div>
+
+<footer>
+    <%-blocks.footer%>
+</footer>
+<hr/>
+
+<script type="text/javascript" src="/javascripts/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+
+<script>
+    $('#search-form').on('submit', function() {
+        var form = $(this);
+        var data = form.serialize();
+        $.ajax({
+            url: "/search",
+            method: "POST",
+            data: data
+        });
+        return false;
+    });
+</script>
+</body>
+</html>

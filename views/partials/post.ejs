@@ -1,0 +1,26 @@
+<% for(var i = 0; i < posts.length;i++){%>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="pull-left">
+            <a href="#">
+                <img class="media-object img-circle" src="<%=user.avatar%>" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+            </a>
+        </div>
+        <h4><a href="#" style="text-decoration:none;"><strong><%=user.username%></strong></a></h4>
+
+        <hr>
+        <div class="post-content">
+            <h3><b><%=posts[i].title%></b></h3>
+            <p><%=posts[i].post%></p>
+
+        </div>
+        <hr>
+        <div>
+            <div class="pull-right">
+                <p class="text-muted" style="margin-left:5px;"><%=posts[i].date%></p>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+<% }%>

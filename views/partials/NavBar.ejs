@@ -1,0 +1,84 @@
+<div class="navbar-wrapper" xmlns="http://www.w3.org/1999/html">
+    <div class="container">
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/profile" style="margin-right:-8px; margin-top:-5px;">
+                        <img alt="Brand" src="/images/logo.png" width="35px" height="35px">
+                    </a>
+                    <a class="navbar-brand" href="/profile">Microblog</a>
+                    <i class="brand_network"><small><small>На минималках</small></small></i>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <% if (user){ %>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/profile">Моя страница</a></li>
+
+                    </ul>
+                    <div class="col-sm-5 col-md-5">
+                        <form class="navbar-form" role="search" action="/search" method="post" name="search-form">
+                            <div id="custom-search-input">
+                                <div class="input-group col-md-12">
+                                    <input type="text" name="stext" class="search-query form-control" placeholder="Search" />
+                                    <span class="input-group-btn">
+                                    <<input type="submit" class="btn btn-danger" value="Поиск"/>
+                                </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <%}%>
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if (user){ %>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
+                                        <img src="<%=user.avatar%>" class="img-responsive img-circle" title="John Doe" alt="John Doe" width="30px" height="30px">
+                                    </span>
+                                    <span class="user-name">
+                                        <%=user.username%>
+                                    </span>
+                                <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="navbar-content">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <img src="<%=user.avatar%>" alt="Alternate Text" class="img-responsive" width="120px" height="120px" />
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span><%=user.username%></span>
+                                                <p class="text-muted small">
+                                                    <%=user.email%></p>
+                                                <div class="divider">
+                                                </div>
+                                                <a href="/settings" class="btn btn-default btn-xs"><i class="fa fa-cogs" aria-hidden="true"></i>Настройки</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navbar-footer">
+                                        <div class="navbar-footer-content">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <a href="/logout" class="btn btn-default btn-sm pull-right"><i class="fa fa-power-off" aria-hidden="true"></i>Выход</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <% } else { %>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/signIn">Войти</a></li>
+                    </ul>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

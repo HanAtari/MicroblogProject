@@ -1,0 +1,47 @@
+<div class="container">
+<div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h1 class="panel-title pull-left" style="font-size:30px;"><i class="fa fa-cogs" aria-hidden="true"></i> Настройки</h1>
+        </div>
+    </div>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h1 class="panel-title pull-left" style="font-size:30px;">Мой профиль</h1>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="panel-title pull-left">Личные данные</h3>
+            <br><br>
+            <form class="form-horizontal">
+                <label for="First_name">Имя</label>
+                <input type="text" class="form-control" id="Nick" placeholder="John" value="<%=user.username%>">
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="panel-title pull-left">Your photo</h3>
+            <br><br>
+            <div align="center">
+                <div class="col-lg-12 col-md-12">
+                    <img class="img-thumbnail img-responsive" src="<%=user.avatar%>" width="300px" height="300px">
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <button class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i> Загрузите новое фото!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a class="btn btn-default" href="/profile"><i class="fa fa-fw fa-times" aria-hidden="true"></i> Отмена</a>
+            <button class="btn btn-primary"><i class="fa fa-fw fa-check" aria-hidden="true"></i> Обновить профиль</button>
+        </div>
+    </div>
+</div>
+</div>

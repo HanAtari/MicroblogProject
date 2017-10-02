@@ -1,0 +1,58 @@
+<% layout('layout/page') -%>
+<% block('title', 'Поиск'); %>
+
+<%if(ser){%>
+<div class="container">
+<h4><strong><%=ser%></strong></h4>
+</div>
+<%}else{%>
+<div class="container">
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="media">
+                    <div align="center">
+                        <img class="thumbnail img-responsive" src="<%=search.avatar%>" width="300px" height="300px">
+                    </div>
+                    <div class="media-body">
+                        <hr>
+                        <h4><strong> <%=search.username%></strong></h4>
+                        <hr>
+                        <h4><strong><%=search.email%></strong></h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
+        <hr>
+        <% for(var i = 0; i < posts.length;i++){%>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="pull-left">
+                    <a href="#">
+                        <img class="media-object img-circle" src="<%=search.avatar%>" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                    </a>
+                </div>
+                <h4><a href="#" style="text-decoration:none;"><strong><%=search.username%></strong></a></h4>
+
+                <hr>
+                <div class="post-content">
+                    <h3><b><%=posts[i].title%></b></h3>
+                    <p><%=posts[i].post%></p>
+
+                </div>
+                <hr>
+                <div>
+                    <div class="pull-right">
+                        <p class="text-muted" style="margin-left:5px;"><%=posts[i].date%></p>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <% }%>
+    </div>
+</div>
+<%}%>
