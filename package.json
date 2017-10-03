@@ -30,9 +30,9 @@
     "serve-favicon": "^2.2.0",
     "should": "~2.1.0"
   },
-  "main": "./bin/www",
+  "main": "app.js",
   "engines": {
     "node": "6.11.3",
-    "npm": "3.10.9"
+    "npm": "3.10.10"
   }
 }

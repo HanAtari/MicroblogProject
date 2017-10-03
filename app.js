@@ -45,7 +45,7 @@ app.use('/', routes);
 
 // mongoose
 var settings=require("./settings");
-mongoose.connect("mongodb://"+settings.ip+"/"+settings.db);
+mongoose.connect("mongodb://admin:admin@ds159254.mlab.com:59254/microblog");
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
