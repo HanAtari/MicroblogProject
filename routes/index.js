@@ -16,7 +16,7 @@ var isAuthenticated = function (req, res, next) {
 module.exports = function(passport){
 
     router.get('/', function(req, res, next) {
-        res.render('signIn',{user : req.user, message: req.flash('message')});
+        res.render('index',{user : req.user});
     });
 
     router.post('/post',function(req, res, next){
