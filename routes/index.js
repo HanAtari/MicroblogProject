@@ -16,7 +16,7 @@ var isAuthenticated = function (req, res, next) {
 module.exports = function(passport){
 
     router.get('/', function(req, res, next) {
-        res.render('index',{user : req.user});
+        res.render('SignIn', { user : req.user, message: req.flash('message')});
     });
 
     router.post('/post',function(req, res, next){
@@ -80,9 +80,9 @@ module.exports = function(passport){
         });
     });
 
-    router.get('/signIn', function(req, res) {
+   /* router.get('/signIn', function(req, res) {
         res.render('SignIn', { user : req.user, message: req.flash('message')});
-    });
+    });*/
 
     /* Handle Login POST */
     router.post('/signIn', passport.authenticate('login', {
